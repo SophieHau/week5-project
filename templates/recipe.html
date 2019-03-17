@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+  <!-- Display information about the given recipe. Be sure to show its image, also. -->
+
+<div class="container-fluid">
+	<div class="row mt-5">
+		<div class="col-6">
+			<div class="card">
+  				<div class="row no-gutters">
+    				<div class="col-md-4">
+      					<img src="{{ recipe.image_URL }}" class="card-img recipe-image" alt="an image of {{ recipe.title }}">
+    				</div>
+    		<div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ recipe.title }}</h5>
+        <h6>View count <span class="badge badge-secondary">{{ popularity }}</span></h6>
+        <p class="card-text">{{ recipe.description }}</p>
+        <p class="ingredients-text">{{ recipe.ingredients }}</p>
+        <p class="ingredients-text">{{ recipe.category }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="{{ url_for('delete_recipe', recipe_id = recipe.recipe_id) }}" class="btn btn-primary btn-lg active mt-5" role="button" aria-pressed="true">Delete recipe</a>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="row justify-content-center mt-1">
+      <div class="col-4 flash-messages">
+        {% for message in messages %}
+          <div class="alert alert-info">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  {% endwith %}
+		</div>
+	</div>
+</div>
+
+  {% endblock %}

@@ -1,0 +1,24 @@
+=== Extending the Recipes/Cocktails project ===
+
+Here are a few suggestions for extending the project.
+Please only attempt these once you've implemented all the basic requirements.
+
+* Delete recipe/cocktail feature - Part 1
+	You'll need a new route, of course.
+	Redirect to the main page.
+
+* Delete recipe/cocktail feature - Part 2
+	We should do some validation before deleting:
+		- If the recipe doesn't belong to the user, should we allow deletion?
+	If validation failed, display a flash message indicating why.
+
+* Recipe popularity:
+	Every time a recipe is viewed, record this in the database.
+	List recipes sorted by popularity.
+
+* Recipe category
+	Add a field to the recipe/cocktail table for a category. Give it a text data-type.
+	Allow a user to type in a category when adding a new recipe.
+	On the recipes page, indicate recipe category. Either:
+	  - as a badge/label for each row, or
+	  - by dividing the page into sections - one section per category. Group recipes by their category on the page.

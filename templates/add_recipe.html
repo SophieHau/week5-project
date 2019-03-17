@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+	<h1>Add New Recipe</h1>
+	<!-- Add a form to allow the user to input data for a new recipe which is to be added to the database. -->
+	<div class="row mt-5">
+		<div class="col-6">
+			<form method="post">
+			  <div class="form-group">
+			    <label for="title">Title</label>
+			    <input type="text" class="form-control" id="title" name="recipe-title" placeholder="Your recipe title">
+			  </div>
+			  <div class="form-group">
+			    <label for="image">Image</label>
+			    <input type="text" class="form-control" id="image" name="recipe-image" placeholder="Image URL">
+			  </div>
+			  <div class="form-group">
+    			  <label for="category">Category</label>
+    			  <input type="text" class="form-control" id="category" name="recipe-category">
+  			  </div>
+			  <div class="form-group">
+			    <label for="description">Description</label>
+			    <textarea class="form-control" id="description" name="recipe-description" rows="2"></textarea>
+			  </div>
+			  <div class="form-group">
+			    <label for="ingredients">Ingredients</label>
+			    <textarea class="form-control" id="ingredients" name="recipe-ingredients" rows="5"></textarea>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Add recipe</button>
+			</form>
+		</div>
+	</div>
+
+</div>
+{% endblock %}
